@@ -9,7 +9,9 @@ set -e
 
 # debootstrap variant (see -v option)
 # set only variant= if you don't want minbase by default
-variant='minbase'
+#variant='minbase'
+# by default, no variant
+variant=
 # packages to include by default in the image (see -i option)
 include='iproute,iputils-ping'
 # architecture of the image
