@@ -103,7 +103,11 @@ fi
 
 # some rudimentary detection for whether we need to "sudo" our docker calls
 docker=''
-if docker version > /dev/null 2>&1; then
+if docker.io version > /dev/null 2>&1; then
+	docker='docker.io'
+elif sudo docker.io version > /dev/null 2>&1; then
+	docker='sudo docker.io'
+elif docker version > /dev/null 2>&1; then
 	docker='docker'
 elif sudo docker version > /dev/null 2>&1; then
 	docker='sudo docker'
